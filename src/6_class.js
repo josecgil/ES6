@@ -32,9 +32,9 @@ Distance.prototype.inKilometers=function() {
     return this.distanceInMeters/this.METERS_IN_1KM;
 };
 
-const bcnToMad=new Distance(500, "km");
-const madToSev=new Distance(242.956, "miles");
-const totalDistanceInKm=bcnToMad.add(madToSev).inKilometers();
+let bcnToMad=new Distance(500, "km");
+let madToSev=new Distance(242.956, "miles");
+let totalDistanceInKm=bcnToMad.add(madToSev).inKilometers();
 
 console.log(totalDistanceInKm);
 
@@ -48,7 +48,7 @@ console.log(totalDistanceInKm);
 
 //No private / public still "_" convention
 
-class Distance {
+class NewDistance {
 
     static get METER() { return "m"; } //mimics and static const
     static get KM() { return "km"; }
@@ -85,9 +85,9 @@ class Distance {
     }
 }
 
-const bcnToMad=new Distance(500, Distance.KM);
-const madToSev=new Distance(242.956, Distance.MILES);
-const totalDistanceInKm=bcnToMad.add(madToSev).inKilometers();
+bcnToMad=new NewDistance(500, NewDistance.KM);
+madToSev=new NewDistance(242.956, NewDistance.MILES);
+totalDistanceInKm=bcnToMad.add(madToSev).inKilometers();
 
 console.log(totalDistanceInKm);
 
